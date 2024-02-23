@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+
+</head>
+<body>
+    <h2>Part One: Solidify Terminology</h2>
+    <p>In your own terms, define the following terms:</p>
+    
+    <ul>
+        <li>What is HTTP?</li>
+        <p>Short for Hypertext Transfer Protocol. It is the protocol to communicate with servers.</p>
+
+        <li>What is a URL?</li>
+        <p>The language-based address of a website corresponded to IP addresses.</p>
+
+        <li>What is DNS?</li>
+        <p>Short of Domain Name System. It is the way the internet translate between URL and IP addresses.</p>
+
+        <li>What is a query string?</li>
+        <p>Part of an URL. It is located at the end of an URL for additional parameters.</p>
+
+        <li>What are two HTTP verbs and how are they different?</li>
+        <p>Two HTTP verbs are GET and POST. THey are both requests. GET takes information and does not change data on the server side. POST sends data to a server.</p>
+
+        <li>What is an HTTP request?</li>
+        <p>Something the user asks a server to do.</p>
+
+        <li>What is an HTTP response?</li>
+        <p>The response from a HTTP request</p>
+
+        <li>What is an HTTP header? Give a couple examples of request and response headers you have seen.</li>
+        <p>Specific details of a request/response. Some examples of request headers are authority, method, and accept-language. Some examples of response headers are content-type, date, status, and server.</p>
+
+        <li>What are the processes that happen when you type “http://somesite.com/some/page.html” into a browser?</li>
+        <p>The browser translates the URL into and IP address with the DNS. A request for the content is sent to the server with the IP address. The server decides what to do and sends back a response. Base on the response, the browser displays a web page.</p>
+    </ul>
+
+    <h2>Part Two: Practice Tools</h2>
+
+    <ol>
+        <li>Using curl, make a GET request to the icanhazdadjoke.com API to find all jokes involving the word “pirate”</li>
+        <p>curl -L icanhazdadjoke.com/search?term=pirate</p>
+        <p>What does a pirate pay for his corn? A buccaneer!</p>
+        <p>What did the pirate say on his 80th birthday? Aye Matey!</p>
+        <p>Why couldn't the kid see the pirate movie? Because it was rated arrr!</p>
+        <p>Why are pirates called pirates? Because they arrr!</p>
+        <p>Why do pirates not know the alphabet? They always get stuck at "C"</p>
+
+        <li>Use dig to find what the IP address is for icanhazdadjoke.com</li>
+        <p>dig icanhazdadjoke.com</p>
+        <p>104.21.66.15 and 172.67.198.173</p>
+
+
+        <li>Make a simple web page and serve it using python3 -m http.server. Visit the page in a browser.</li>
+        <p>python3 -m http.server</p>
+        <p>http://localhost:8000/</p>
+    </ol>
+
+    <h2>Part Three: Explore Dev Tools</h2>
+
+    <form>
+        <label for="firstName"></label>
+        <input type="text" name="firstName" id="firstName">
+        <label for="lastName"></label>
+        <input type="text" name="lastName" id="lastName">
+        <input type="submit" value="Submit">
+    </form>
+
+    <form method="post">
+        <label for="firstName"></label>
+        <input type="text" name="firstName" id="firstName">
+        <label for="lastName"></label>
+        <input type="text" name="lastName" id="lastName">
+        <input type="submit" value="Submit">
+    </form>
+
+    <p>Form data for the post method is under "Payload"</p>
+
+    <h2>Part Four: Explore the URL API</h2>
+
+    <a href=#>Link</a>
+
+    <script>
+        const link = document.querySelector("a");
+        let url = new URL("http://youtube.com/");
+        url.pathname = "results";
+        url.search = "?search_query=never+gonna+give+you+up"
+        link.href = url;
+    </script>
+</body>
+</html>
